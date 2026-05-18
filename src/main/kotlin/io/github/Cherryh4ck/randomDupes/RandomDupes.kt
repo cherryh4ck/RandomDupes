@@ -2,6 +2,7 @@ package io.github.Cherryh4ck.randomDupes
 
 import io.github.Cherryh4ck.randomDupes.Modules.AnvilDupe
 import io.github.Cherryh4ck.randomDupes.Modules.DonkeyDeathDupe
+import io.github.Cherryh4ck.randomDupes.Modules.LavaDupe
 import org.bukkit.plugin.java.JavaPlugin
 
 class RandomDupes : JavaPlugin() {
@@ -9,6 +10,7 @@ class RandomDupes : JavaPlugin() {
     override fun onEnable() {
         server.pluginManager.registerEvents(DonkeyDeathDupe(), this)
         server.pluginManager.registerEvents(AnvilDupe(this), this)
+        server.pluginManager.registerEvents(LavaDupe(), this)
     }
 
     override fun onDisable() {
