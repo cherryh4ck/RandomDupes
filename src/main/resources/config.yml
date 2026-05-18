@@ -1,0 +1,15 @@
+# Donkey Death Dupe
+# When a donkey with a chest dies, everything inside the chest is duped
+donkey-death-dupe:
+  enable: true
+
+# 1.17 Anvil Dupe
+# Check this video on how to do it:
+# https://www.youtube.com/watch?v=oSdwwxBgWco
+anvil-dupe:
+  enable: true
+
+# Lava Dupe
+# Requires a hopper and lava above the hopper.
+lava-dupe:
+  enable: true
