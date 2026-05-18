@@ -1,3 +1,6 @@
+general:
+  prefix: "<gold>[<bold><red>RandomDupes</red></bold>]</gold>"
+
 # Donkey Death Dupe
 # When a donkey with a chest dies, everything inside the chest is duped
 donkey-death-dupe:

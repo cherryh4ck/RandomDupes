@@ -7,3 +7,9 @@ api-version: '1.21.11'
 load: POSTWORLD
 
 authors: [ Cherryh4ck ]
+
+commands:
+  randomdupes:
+    description: Random Dupes Main command.
+    usage: /randomdupes [option]
+    permission: randomdupes.main
