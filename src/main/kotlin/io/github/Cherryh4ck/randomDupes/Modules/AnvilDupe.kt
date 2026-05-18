@@ -20,15 +20,13 @@ class AnvilDupe(private val plugin : RandomDupes) : Listener {
         val loc = inv.location ?: return
         if (p.inventory.firstEmpty() != -1) return
 
-        val dropItem = Runnable {
+        Bukkit.getScheduler().runTaskLater(plugin, Runnable {
             if (loc.block.type == Material.AIR) {
                 val dupedItem = item.clone()
                 dupedItem.amount = item.amount
                 val dropped = p.world.dropItem(p.location, dupedItem)
                 dropped.velocity = p.eyeLocation.direction
             }
-        }
-
-        Bukkit.getScheduler().runTaskLater(plugin, dropItem, 1L)
+        }, 1L)
     }
 }
