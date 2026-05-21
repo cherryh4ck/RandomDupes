@@ -13,6 +13,11 @@ anvil-dupe:
   enable: true
 
 # Lava Dupe
-# Requires a hopper and lava above the hopper.
+# Requires a hopper and lava above the hopper
 lava-dupe:
+  enable: true
+
+# Minecart Portal Dupe
+# Every chest minecart that enters a nether portal will be duplicated
+minecart-portal-dupe:
   enable: true

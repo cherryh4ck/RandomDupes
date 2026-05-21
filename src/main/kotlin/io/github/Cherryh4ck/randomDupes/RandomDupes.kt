@@ -3,6 +3,7 @@ package io.github.Cherryh4ck.randomDupes
 import io.github.Cherryh4ck.randomDupes.Modules.AnvilDupe
 import io.github.Cherryh4ck.randomDupes.Modules.DonkeyDeathDupe
 import io.github.Cherryh4ck.randomDupes.Modules.LavaDupe
+import io.github.Cherryh4ck.randomDupes.Modules.MinecartPortalDupe
 import net.kyori.adventure.text.minimessage.MiniMessage
 import org.bukkit.Bukkit
 import org.bukkit.command.Command
@@ -34,6 +35,7 @@ class RandomDupes : JavaPlugin() {
         "donkey-death-dupe.enable" to DonkeyDeathDupe(),
         "anvil-dupe.enable" to AnvilDupe(this),
         "lava-dupe.enable" to LavaDupe(),
+        "minecart-portal-dupe.enable" to MinecartPortalDupe(this)
     )
 
     fun reloadPlugin(){
