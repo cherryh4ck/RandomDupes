@@ -2,7 +2,7 @@ general:
   prefix: "<gold>[<bold><red>RandomDupes</red></bold>]</gold>"
 
 # Donkey Death Dupe
-# When a donkey with a chest dies, everything inside the chest is duped
+# When a donkey with a chest dies, everything inside the donkey's chest is duped
 donkey-death-dupe:
   enable: true
 
@@ -18,6 +18,13 @@ lava-dupe:
   enable: true
 
 # Minecart Portal Dupe
-# Every chest minecart that enters a nether portal will be duplicated
+# Every chest minecart (except already duped ones) that enters a nether portal will be duplicated
 minecart-portal-dupe:
   enable: true
+
+# /dupe Command Dupe (:sick:)
+# Dupes the item the player is currently using
+# Requires actually nothing, cheap dupe, not recommended
+# (NOT IMPLEMENTED YET)
+dupe-command:
+  enable: false
