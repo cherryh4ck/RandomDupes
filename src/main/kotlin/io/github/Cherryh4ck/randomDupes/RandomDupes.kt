@@ -1,5 +1,6 @@
 package io.github.Cherryh4ck.randomDupes
 
+import io.github.Cherryh4ck.randomDupes.Commands.DupeCommand
 import io.github.Cherryh4ck.randomDupes.Modules.AnvilDupe
 import io.github.Cherryh4ck.randomDupes.Modules.DonkeyDeathDupe
 import io.github.Cherryh4ck.randomDupes.Modules.LavaDupe
@@ -23,6 +24,8 @@ class RandomDupes : JavaPlugin() {
         val randomdupes = getCommand("randomdupes")
         randomdupes?.setExecutor(this)
         randomdupes?.tabCompleter = this
+
+        getCommand("dupe")?.setExecutor(DupeCommand(this))
 
         logToConsole("Plugin started.")
     }

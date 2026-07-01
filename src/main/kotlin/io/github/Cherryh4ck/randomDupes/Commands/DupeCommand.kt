@@ -12,7 +12,15 @@ class DupeCommand(private val plugin : RandomDupes) : TabExecutor {
 
     override fun onCommand(sender: CommandSender, command: Command, label: String, args: Array<out String>): Boolean {
         if (sender is Player){
-            val player = sender
+            val item = sender.inventory.itemInMainHand
+            if (item.type.isAir) {
+                sender.sendMessage(mm.deserialize("${plugin.prefix} <red>You must have something in your hand..."))
+                return true
+            }
+
+            val clone = item.clone()
+            clone.amount = 1
+            sender.world.dropItemNaturally(sender.location, clone)
         }
         else{
             sender.sendMessage(mm.deserialize("${plugin.prefix} <red>You must be a player to use this command."))

@@ -13,3 +13,6 @@ commands:
     description: Random Dupes Main command.
     usage: /randomdupes [option]
     permission: randomdupes.main
+  dupe:
+    description: Dupe command.
+    usage: /dupe
