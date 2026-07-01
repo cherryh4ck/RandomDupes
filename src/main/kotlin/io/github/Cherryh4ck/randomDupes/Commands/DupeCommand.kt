@@ -20,6 +20,11 @@ class DupeCommand(private val plugin : RandomDupes) : TabExecutor {
                 return true;
             }
 
+            if (plugin.needsPermission && !sender.hasPermission("randomdupes.dupe")) {
+                sender.sendMessage(mm.deserialize("${plugin.prefix} <red>You lack permissions to do this."))
+                return true
+            }
+
             val item = sender.inventory.itemInMainHand
             if (item.type.isAir) {
                 sender.sendMessage(mm.deserialize("${plugin.prefix} <red>You must have something in your hand..."))
@@ -27,7 +32,7 @@ class DupeCommand(private val plugin : RandomDupes) : TabExecutor {
             }
 
             if (cooldowns.contains(sender.uniqueId)) {
-                sender.sendMessage(mm.deserialize("${plugin.prefix} Please wait before using this command again."))
+                sender.sendMessage(mm.deserialize("${plugin.prefix} <red>Please wait before using this command again."))
                 return true
             }
 
