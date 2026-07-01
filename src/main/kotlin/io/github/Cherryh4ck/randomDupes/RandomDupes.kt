@@ -18,7 +18,7 @@ class RandomDupes : JavaPlugin() {
 
     // /dupe cfg
     var dupeIsEnabled = config.getBoolean("dupe-command.enable")
-    var cooldownSeconds = config.getInt("dupe-command.cooldown")
+    var cooldownSeconds = 20L * config.getInt("dupe-command.cooldown")
     var needsPermission = config.getBoolean("dupe-command.needs-permission")
 
     override fun onEnable() {
@@ -51,7 +51,7 @@ class RandomDupes : JavaPlugin() {
         hookListeners()
         prefix = config.getString("general.prefix")
         dupeIsEnabled = config.getBoolean("dupe-command.enable")
-        cooldownSeconds = config.getInt("dupe-command.cooldown")
+        cooldownSeconds = 20L * config.getInt("dupe-command.cooldown")
         needsPermission = config.getBoolean("dupe-command.needs-permission")
     }
 
