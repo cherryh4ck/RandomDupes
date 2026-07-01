@@ -4,23 +4,23 @@ general:
 # Donkey Death Dupe
 # When a donkey with a chest dies, everything inside the donkey's chest is duped
 donkey-death-dupe:
-  enable: true
+  enable: false
 
 # 1.17 Anvil Dupe
 # Check this video on how to do it:
 # https://www.youtube.com/watch?v=oSdwwxBgWco
 anvil-dupe:
-  enable: true
+  enable: false
 
 # Lava Dupe
 # Requires a hopper and lava above the hopper
 lava-dupe:
-  enable: true
+  enable: false
 
 # Minecart Portal Dupe
 # Every chest minecart (except already duped ones) that enters a nether portal will be duplicated
 minecart-portal-dupe:
-  enable: true
+  enable: false
 
 # /dupe Command Dupe (:sick:)
 # Dupes the item the player is currently using
