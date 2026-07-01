@@ -16,6 +16,11 @@ class RandomDupes : JavaPlugin() {
     val minimessage = MiniMessage.miniMessage()
     var prefix = config.getString("general.prefix")
 
+    // /dupe cfg
+    var dupeIsEnabled = config.getBoolean("dupe-command.enable")
+    var cooldownSeconds = config.getInt("dupe-command.cooldown")
+    var needsPermission = config.getBoolean("dupe-command.needs-permission")
+
     override fun onEnable() {
         saveDefaultConfig()
         reloadConfig()
@@ -45,6 +50,9 @@ class RandomDupes : JavaPlugin() {
         reloadConfig()
         hookListeners()
         prefix = config.getString("general.prefix")
+        dupeIsEnabled = config.getBoolean("dupe-command.enable")
+        cooldownSeconds = config.getInt("dupe-command.cooldown")
+        needsPermission = config.getBoolean("dupe-command.needs-permission")
     }
 
     fun hookListeners(){

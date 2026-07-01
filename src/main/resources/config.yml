@@ -28,3 +28,5 @@ minecart-portal-dupe:
 # (NOT IMPLEMENTED YET)
 dupe-command:
   enable: false
+  cooldown: 0 # In seconds
+  needs-permission: false # If enabled, the player will need the "randomdupes.dupe" permission
