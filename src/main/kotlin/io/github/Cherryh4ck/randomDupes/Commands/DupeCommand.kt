@@ -3,6 +3,7 @@ package io.github.Cherryh4ck.randomDupes.Commands
 import io.github.Cherryh4ck.randomDupes.RandomDupes
 import net.kyori.adventure.text.minimessage.MiniMessage
 import org.bukkit.Bukkit
+import org.bukkit.Material
 import org.bukkit.command.Command
 import org.bukkit.command.CommandSender
 import org.bukkit.command.TabExecutor
@@ -25,10 +26,15 @@ class DupeCommand(private val plugin : RandomDupes) : TabExecutor {
                 return true
             }
 
-            val item = sender.inventory.itemInMainHand
+            var item = sender.inventory.itemInMainHand
             if (item.type.isAir) {
-                sender.sendMessage(mm.deserialize("${plugin.prefix} <red>You must have something in your hand..."))
-                return true
+                if (sender.inventory.itemInOffHand.type.isAir) {
+                    sender.sendMessage(mm.deserialize("${plugin.prefix} <red>You must have something in one of your hands..."))
+                    return true
+                }
+                else {
+                    item = sender.inventory.itemInOffHand
+                }
             }
 
             if (cooldowns.contains(sender.uniqueId)) {
