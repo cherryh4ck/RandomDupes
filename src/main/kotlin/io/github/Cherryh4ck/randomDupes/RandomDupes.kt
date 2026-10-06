@@ -3,6 +3,7 @@ package io.github.Cherryh4ck.randomDupes
 import io.github.Cherryh4ck.randomDupes.Commands.DupeCommand
 import io.github.Cherryh4ck.randomDupes.Modules.AnvilDupe
 import io.github.Cherryh4ck.randomDupes.Modules.DonkeyDeathDupe
+import io.github.Cherryh4ck.randomDupes.Modules.ItemFrameDupe
 import io.github.Cherryh4ck.randomDupes.Modules.LavaDupe
 import io.github.Cherryh4ck.randomDupes.Modules.MinecartPortalDupe
 import net.kyori.adventure.text.minimessage.MiniMessage
@@ -20,6 +21,9 @@ class RandomDupes : JavaPlugin() {
     var dupeIsEnabled = config.getBoolean("dupe-command.enable")
     var cooldownSeconds = 20L * config.getInt("dupe-command.cooldown")
     var needsPermission = config.getBoolean("dupe-command.needs-permission")
+
+    // item frame dupe cfg
+    var itemFrameProbability = config.getInt("item-frame-dupe.probability")
 
     override fun onEnable() {
         saveDefaultConfig()
@@ -43,7 +47,8 @@ class RandomDupes : JavaPlugin() {
         "donkey-death-dupe.enable" to DonkeyDeathDupe(),
         "anvil-dupe.enable" to AnvilDupe(this),
         "lava-dupe.enable" to LavaDupe(),
-        "minecart-portal-dupe.enable" to MinecartPortalDupe(this)
+        "minecart-portal-dupe.enable" to MinecartPortalDupe(this),
+        "item-frame-dupe.enable" to ItemFrameDupe(this)
     )
 
     fun reloadPlugin(){
@@ -53,6 +58,7 @@ class RandomDupes : JavaPlugin() {
         dupeIsEnabled = config.getBoolean("dupe-command.enable")
         cooldownSeconds = 20L * config.getInt("dupe-command.cooldown")
         needsPermission = config.getBoolean("dupe-command.needs-permission")
+        itemFrameProbability = config.getInt("item-frame-dupe.probability")
     }
 
     fun hookListeners(){

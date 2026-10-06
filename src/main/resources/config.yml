@@ -22,6 +22,12 @@ lava-dupe:
 minecart-portal-dupe:
   enable: false
 
+# Item Frame Dupe
+# When punching the item inside the item frame, it may dupe or not (% based)
+item-frame-dupe:
+  enable: false
+  probability: 50
+
 # /dupe Command Dupe (:sick:)
 # Dupes the item the player is currently holding
 # Requires actually nothing, cheap dupe, not recommended
