@@ -23,9 +23,8 @@ minecart-portal-dupe:
   enable: false
 
 # /dupe Command Dupe (:sick:)
-# Dupes the item the player is currently using
+# Dupes the item the player is currently holding
 # Requires actually nothing, cheap dupe, not recommended
-# (NOT IMPLEMENTED YET)
 dupe-command:
   enable: false
   cooldown: 0 # In seconds
