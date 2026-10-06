@@ -3,7 +3,6 @@ package io.github.Cherryh4ck.randomDupes.Commands
 import io.github.Cherryh4ck.randomDupes.RandomDupes
 import net.kyori.adventure.text.minimessage.MiniMessage
 import org.bukkit.Bukkit
-import org.bukkit.Material
 import org.bukkit.command.Command
 import org.bukkit.command.CommandSender
 import org.bukkit.command.TabExecutor
@@ -18,7 +17,7 @@ class DupeCommand(private val plugin : RandomDupes) : TabExecutor {
         if (sender is Player){
             if (!plugin.dupeIsEnabled) {
                 sender.sendMessage(mm.deserialize("${plugin.prefix} <red>This dupe is disabled."))
-                return true;
+                return true
             }
 
             if (plugin.needsPermission && !sender.hasPermission("randomdupes.dupe")) {
