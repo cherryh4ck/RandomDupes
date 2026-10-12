@@ -1,7 +1,6 @@
 package io.github.Cherryh4ck.randomDupes.Commands
 
 import io.github.Cherryh4ck.randomDupes.RandomDupes
-import net.kyori.adventure.text.minimessage.MiniMessage
 import org.bukkit.Bukkit
 import org.bukkit.command.Command
 import org.bukkit.command.CommandSender
