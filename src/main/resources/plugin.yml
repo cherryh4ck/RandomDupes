@@ -16,3 +16,11 @@ commands:
   dupe:
     description: Dupe command.
     usage: /dupe
+
+permissions:
+  randomdupes.main:
+    description: Allows /randomdupes use
+    default: false
+  randomdupes.dupe:
+    description: Allows /dupe use (if enabled)
+    default: false
