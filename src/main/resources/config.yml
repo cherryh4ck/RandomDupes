@@ -35,3 +35,10 @@ dupe-command:
   enable: false
   cooldown: 0 # In seconds
   needs-permission: false # If enabled, the player will need the "randomdupes.dupe" permission
+
+# /popbob Command Dupe (parody of /dupe)
+# Dupes the item the player is currently holding in the offhand
+# Only requires the player to be holding a TNT minecart in the mainhand, which the player loses after executing the command
+popbob-command:
+  enable: false
+  needs-permission: false # If enabled, the player will need the "randomdupes.popbob.dupe" permission

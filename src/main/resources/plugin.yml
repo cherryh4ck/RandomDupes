@@ -16,6 +16,9 @@ commands:
   dupe:
     description: Dupe command.
     usage: /dupe
+  popbob:
+    description: Popbob dupe command.
+    usage: /popbob
 
 permissions:
   randomdupes.main:
@@ -23,4 +26,7 @@ permissions:
     default: op
   randomdupes.dupe:
     description: Allows /dupe use (if enabled)
+    default: op
+  randomdupes.popbob.dupe:
+    description: Allows /popbob use (if enabled)
     default: op

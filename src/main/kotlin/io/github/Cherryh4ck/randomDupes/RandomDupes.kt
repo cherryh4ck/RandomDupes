@@ -1,6 +1,7 @@
 package io.github.Cherryh4ck.randomDupes
 
 import io.github.Cherryh4ck.randomDupes.Commands.DupeCommand
+import io.github.Cherryh4ck.randomDupes.Commands.PopbobCommand
 import io.github.Cherryh4ck.randomDupes.Modules.AnvilDupe
 import io.github.Cherryh4ck.randomDupes.Modules.DonkeyDeathDupe
 import io.github.Cherryh4ck.randomDupes.Modules.ItemFrameDupe
@@ -22,6 +23,10 @@ class RandomDupes : JavaPlugin() {
     var cooldownSeconds = 20L * config.getInt("dupe-command.cooldown")
     var needsPermission = config.getBoolean("dupe-command.needs-permission")
 
+    // /popbob cfg
+    var popbobDupeIsEnabled = config.getBoolean("popbob-command.enable")
+    var popbobDupeNeedsPermission = config.getBoolean("popbob-command.needs-permission")
+
     // item frame dupe cfg
     var itemFrameProbability = config.getInt("item-frame-dupe.probability")
 
@@ -35,6 +40,7 @@ class RandomDupes : JavaPlugin() {
         randomdupes?.tabCompleter = this
 
         getCommand("dupe")?.setExecutor(DupeCommand(this))
+        getCommand("popbob")?.setExecutor(PopbobCommand(this))
 
         logToConsole("Plugin started.")
     }
@@ -58,6 +64,8 @@ class RandomDupes : JavaPlugin() {
         dupeIsEnabled = config.getBoolean("dupe-command.enable")
         cooldownSeconds = 20L * config.getInt("dupe-command.cooldown")
         needsPermission = config.getBoolean("dupe-command.needs-permission")
+        popbobDupeIsEnabled = config.getBoolean("popbob-command.enable")
+        popbobDupeNeedsPermission = config.getBoolean("popbob-command.needs-permission")
         itemFrameProbability = config.getInt("item-frame-dupe.probability").coerceIn(0, 100)
     }
 
