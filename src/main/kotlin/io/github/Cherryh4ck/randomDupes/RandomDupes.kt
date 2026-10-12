@@ -58,7 +58,7 @@ class RandomDupes : JavaPlugin() {
         dupeIsEnabled = config.getBoolean("dupe-command.enable")
         cooldownSeconds = 20L * config.getInt("dupe-command.cooldown")
         needsPermission = config.getBoolean("dupe-command.needs-permission")
-        itemFrameProbability = config.getInt("item-frame-dupe.probability")
+        itemFrameProbability = config.getInt("item-frame-dupe.probability").coerceIn(0, 100)
     }
 
     fun hookListeners(){
