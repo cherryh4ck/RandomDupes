@@ -10,25 +10,24 @@ import org.bukkit.entity.Player
 import java.util.UUID
 
 class DupeCommand(private val plugin : RandomDupes) : TabExecutor {
-    val mm = MiniMessage.miniMessage()
     val cooldowns: MutableSet<UUID> = java.util.concurrent.ConcurrentHashMap.newKeySet()
 
     override fun onCommand(sender: CommandSender, command: Command, label: String, args: Array<out String>): Boolean {
         if (sender is Player){
             if (!plugin.dupeIsEnabled) {
-                sender.sendMessage(mm.deserialize("${plugin.prefix} <red>This dupe is disabled."))
+                sender.sendMessage(plugin.minimessage.deserialize("${plugin.prefix} <red>This dupe is disabled."))
                 return true
             }
 
             if (plugin.needsPermission && !sender.hasPermission("randomdupes.dupe")) {
-                sender.sendMessage(mm.deserialize("${plugin.prefix} <red>You lack permissions to do this."))
+                sender.sendMessage(plugin.minimessage.deserialize("${plugin.prefix} <red>You lack permissions to do this."))
                 return true
             }
 
             var item = sender.inventory.itemInMainHand
             if (item.type.isAir) {
                 if (sender.inventory.itemInOffHand.type.isAir) {
-                    sender.sendMessage(mm.deserialize("${plugin.prefix} <red>You must have something in one of your hands..."))
+                    sender.sendMessage(plugin.minimessage.deserialize("${plugin.prefix} <red>You must have something in one of your hands..."))
                     return true
                 }
                 else {
@@ -37,7 +36,7 @@ class DupeCommand(private val plugin : RandomDupes) : TabExecutor {
             }
 
             if (cooldowns.contains(sender.uniqueId)) {
-                sender.sendMessage(mm.deserialize("${plugin.prefix} <red>Please wait before using this command again."))
+                sender.sendMessage(plugin.minimessage.deserialize("${plugin.prefix} <red>Please wait before using this command again."))
                 return true
             }
 
@@ -52,7 +51,7 @@ class DupeCommand(private val plugin : RandomDupes) : TabExecutor {
             }
         }
         else{
-            sender.sendMessage(mm.deserialize("${plugin.prefix} <red>You must be a player to use this command."))
+            sender.sendMessage(plugin.minimessage.deserialize("${plugin.prefix} <red>You must be a player to use this command."))
         }
         return true
     }
