@@ -53,8 +53,8 @@ class RandomDupes : JavaPlugin() {
 
     fun reloadPlugin(){
         reloadConfig()
-        hookListeners()
         prefix = config.getString("general.prefix")
+        hookListeners()
         dupeIsEnabled = config.getBoolean("dupe-command.enable")
         cooldownSeconds = 20L * config.getInt("dupe-command.cooldown")
         needsPermission = config.getBoolean("dupe-command.needs-permission")
