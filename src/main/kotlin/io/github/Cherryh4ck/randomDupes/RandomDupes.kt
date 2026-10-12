@@ -15,7 +15,7 @@ import org.bukkit.plugin.java.JavaPlugin
 
 class RandomDupes : JavaPlugin() {
     val minimessage = MiniMessage.miniMessage()
-    var prefix = config.getString("general.prefix")
+    var prefix = config.getString("general.prefix") ?: "<gold>[<bold><red>RandomDupes</red></bold>]</gold>"
 
     // /dupe cfg
     var dupeIsEnabled = config.getBoolean("dupe-command.enable")
@@ -53,7 +53,7 @@ class RandomDupes : JavaPlugin() {
 
     fun reloadPlugin(){
         reloadConfig()
-        prefix = config.getString("general.prefix")
+        prefix = config.getString("general.prefix") ?: "<gold>[<bold><red>RandomDupes</red></bold>]</gold>"
         hookListeners()
         dupeIsEnabled = config.getBoolean("dupe-command.enable")
         cooldownSeconds = 20L * config.getInt("dupe-command.cooldown")
