@@ -20,7 +20,7 @@ commands:
 permissions:
   randomdupes.main:
     description: Allows /randomdupes use
-    default: false
+    default: op
   randomdupes.dupe:
     description: Allows /dupe use (if enabled)
-    default: false
+    default: op
