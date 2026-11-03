@@ -21,8 +21,8 @@
 * Lava dupe (hopper with lava above it)
 * Minecart portal dupe (chest minecarts entering a nether portal are duped)
 * Item frame dupe (chance to dupe when punching the item out of an item frame)
-* /dupe command dupe (duplicates the item in your hand)
-* /popbob command dupe (similar to /dupe, requires a TNT minecart in the main hand)
+* /dupe command dupe (duplicates the item in your mainhand)
+* /popbob command dupe (similar to /dupe, requires a TNT minecart in the mainhand)
 * Compatible with Paper 1.21.11+
 ___
 
