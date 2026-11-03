@@ -2,17 +2,15 @@ package io.github.Cherryh4ck.randomDupes
 
 import io.github.Cherryh4ck.randomDupes.Commands.DupeCommand
 import io.github.Cherryh4ck.randomDupes.Commands.PopbobCommand
-import io.github.Cherryh4ck.randomDupes.Modules.AnvilDupe
-import io.github.Cherryh4ck.randomDupes.Modules.DonkeyDeathDupe
-import io.github.Cherryh4ck.randomDupes.Modules.ItemFrameDupe
-import io.github.Cherryh4ck.randomDupes.Modules.LavaDupe
-import io.github.Cherryh4ck.randomDupes.Modules.MinecartPortalDupe
+import io.github.Cherryh4ck.randomDupes.Modules.*
 import net.kyori.adventure.text.minimessage.MiniMessage
 import org.bukkit.Bukkit
 import org.bukkit.command.Command
 import org.bukkit.command.CommandSender
 import org.bukkit.event.HandlerList
 import org.bukkit.plugin.java.JavaPlugin
+import org.bstats.bukkit.Metrics
+
 
 class RandomDupes : JavaPlugin() {
     val minimessage = MiniMessage.miniMessage()
@@ -34,6 +32,10 @@ class RandomDupes : JavaPlugin() {
         saveDefaultConfig()
         reloadConfig()
         hookListeners()
+
+        val pluginId = 35096
+        val metrics = Metrics(this, pluginId)
+        logToConsole("bStats initialized.")
 
         val randomdupes = getCommand("randomdupes")
         randomdupes?.setExecutor(this)

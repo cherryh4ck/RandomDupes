@@ -11,6 +11,7 @@ repositories {
 dependencies {
     compileOnly("io.papermc.paper:paper-api:1.21.11-R0.1-SNAPSHOT")
     implementation("org.jetbrains.kotlin:kotlin-stdlib")
+    implementation("org.bstats:bstats-bukkit:3.2.1")
 }
 
 kotlin {
@@ -31,5 +32,18 @@ tasks {
         filesMatching("plugin.yml") {
             expand(props)
         }
+    }
+}
+
+tasks.shadowJar {
+    relocate("org.bstats", project.group.toString())
+}
+
+tasks.processResources {
+    val props = mapOf("version" to version)
+    inputs.properties(props)
+    filteringCharset = "UTF-8"
+    filesMatching("plugin.yml") {
+        expand(props)
     }
 }
